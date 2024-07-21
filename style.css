@@ -59,21 +59,29 @@ main {
 .corner-top-left {
     top: 0;
     left: 0;
+    width: calc(100% / 15);
+    height: calc(100% / 15);
 }
 
 .corner-top-right {
     top: 0;
     right: 0;
+    width: calc(100% / 15);
+    height: calc(100% / 15);
 }
 
 .corner-bottom-right {
     bottom: 0;
     right: 0;
+    width: calc(100% / 15);
+    height: calc(100% / 15);
 }
 
 .corner-bottom-left {
     bottom: 0;
     left: 0;
+    width: calc(100% / 15);
+    height: calc(100% / 15);
 }
 
 .space {
