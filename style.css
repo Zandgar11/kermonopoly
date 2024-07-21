@@ -11,17 +11,25 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Styles pour l'en-tête */
 header {
     background: #333;
     color: #fff;
-    padding: 1em 0;
+    padding: 1em;
     text-align: center;
 }
 
-/* Conteneur pour la connexion et le jeu */
+/* Conteneur principal */
+main {
+    flex: 1;
+}
+
+/* Styles pour le conteneur de connexion et de jeu */
 #login-container, #game-container {
     display: flex;
     justify-content: center;
@@ -40,12 +48,11 @@ header {
     background-color: #ddd;
     border: 2px solid #333;
     position: relative;
+    margin-right: 20px;
 }
 
 /* Styles pour les coins du plateau */
 .corner {
-    grid-column: span 2;
-    grid-row: span 2;
     background: #eee;
     border: 1px solid #aaa;
     display: flex;
@@ -57,35 +64,39 @@ header {
 
 /* Styles pour les cases du plateau */
 .space {
+    background: #f9f9f9;
+    border: 1px solid #aaa;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f9f9f9;
-    border: 1px solid #aaa;
     font-size: 0.7em;
     padding: 0.5em;
     text-align: center;
 }
 
-/* Styles spécifiques pour les différentes bordures du plateau */
+/* Styles spécifiques pour les bordures du plateau */
 .border-top {
-    grid-column: span 1;
+    grid-column: 1 / span 11;
     grid-row: 1;
 }
 
 .border-side {
     grid-column: 1;
-    grid-row: span 1;
+    grid-row: 2 / span 11;
 }
 
 .border-bottom {
-    grid-column: span 1;
+    grid-column: 1 / span 11;
     grid-row: 11;
 }
 
+.border-right {
+    grid-column: 11;
+    grid-row: 2 / span 11;
+}
+
+/* Styles pour le panneau d'informations */
 #info-panel {
-    grid-column: span 2;
-    grid-row: span 2;
     background: #fff;
     padding: 1em;
     border: 1px solid #aaa;
@@ -98,6 +109,7 @@ header {
     margin-bottom: 0.5em;
 }
 
+/* Styles pour les boutons */
 button {
     background: #007BFF;
     color: #fff;
@@ -125,6 +137,7 @@ footer {
 #settings-icon {
     display: block;
     margin: 1em auto;
+    text-align: center;
 }
 
 #settings-icon img {
@@ -152,14 +165,6 @@ input[type="text"]::placeholder {
     color: #888;
 }
 
-button {
-    background-color: #28a745;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
 /* Styles pour la page de paramètres */
 #settings-container {
     display: flex;
@@ -173,8 +178,14 @@ button:hover {
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    display: inline-block;
 }
 
 .color-option:hover {
     opacity: 0.8;
+}
+
+/* Styles spécifiques pour les joueurs */
+#player-info {
+    margin-left: 20px;
 }
