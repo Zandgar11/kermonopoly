@@ -13,6 +13,7 @@ function loadSettings() {
     }
     if (savedBoardColor) {
         boardColorInput.value = savedBoardColor;
+        // Appliquer la couleur du plateau immédiatement
         document.body.style.backgroundColor = savedBoardColor;
     }
 }
@@ -31,8 +32,15 @@ function saveSettings(event) {
     document.body.style.backgroundColor = boardColor;
 }
 
+// Fonction pour appliquer les changements en direct
+function applySettings() {
+    const boardColor = boardColorInput.value;
+    document.body.style.backgroundColor = boardColor;
+}
+
 // Événements
 settingsForm.addEventListener('submit', saveSettings);
+boardColorInput.addEventListener('input', applySettings);
 
 // Charger les paramètres lors du chargement de la page
 loadSettings();
