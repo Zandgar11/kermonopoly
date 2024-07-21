@@ -13,7 +13,13 @@
     <main>
         <div id="welcome-container">
             <h2>Bienvenue sur Monopoly Personnalisé</h2>
-            <a href="game.html" id="start-game">Commencer le Jeu</a>
+            <form id="username-form">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required>
+                </div>
+                <button type="submit">Commencer le Jeu</button>
+            </form>
         </div>
     </main>
     <footer>
@@ -22,5 +28,6 @@
             <img src="settings-icon.png" alt="Paramètres">
         </a>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
