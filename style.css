@@ -23,10 +23,51 @@ main {
     padding: 20px;
 }
 
-#game-container {
+#login-container, #game-container {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form label {
+    margin-bottom: 5px;
+}
+
+#login-form input {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#login-form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#login-form button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
 }
 
 #board {
@@ -37,6 +78,8 @@ main {
     border: 2px solid #007bff;
     background-color: #ffffff;
     position: relative;
+    width: 1100px;
+    height: 1100px;
 }
 
 .corner {
@@ -51,7 +94,7 @@ main {
     text-align: center;
 }
 
-.space {
+.side-space {
     background-color: #f1f1f1;
     border: 1px solid #ddd;
     display: flex;
@@ -63,12 +106,35 @@ main {
     text-align: center;
 }
 
+.top-space {
+    grid-column: span 1;
+    grid-row: 1;
+}
+
+.bottom-space {
+    grid-column: span 1;
+    grid-row: 11;
+}
+
+.left-space {
+    grid-column: 1;
+    grid-row: span 1;
+}
+
+.right-space {
+    grid-column: 11;
+    grid-row: span 1;
+}
+
 #info-panel {
+    grid-column: 2 / span 9;
+    grid-row: 2 / span 9;
     width: 200px;
     padding: 20px;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 4px;
+    text-align: center;
 }
 
 #info-panel h2 {
