@@ -12,7 +12,7 @@
     </header>
     <main>
         <div id="game-container">
-            <div id="board">
+             <div id="board">
                 <!-- Coins -->
                 <div class="corner corner-top-left" id="start">Départ</div>
                 <div class="corner corner-top-right" id="free-parking">Libre Parc</div>
@@ -70,22 +70,19 @@
                 <div class="border-side space">Avenue des Champs-Élysées</div>
                 <div class="border-side space">Case de Communauté</div>
                 <div class="border-side space">Rue de Courcelles</div>
-                
-                <!-- Centre du plateau avec informations du joueur -->
-                <div id="info-panel">
-                    <h2>Informations du Jeu</h2>
-                    <p id="player-info">Joueur : <span id="player-name"></span></p>
-                    <p id="balance">Solde : <span id="player-balance">1500</span> $</p>
-                    <button id="end-turn">Finir le tour</button>
-                </div>
+            <div id="player-info">
+                <h2>Informations du Joueur</h2>
+                <p id="current-player">Joueur actuel : <span id="current-player-name"></span></p>
+                <p id="balance">Solde : <span id="player-balance">1500</span> $</p>
+                <button id="end-turn">Finir le tour</button>
             </div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Monopoly Personnalisé</p>
         <a href="settings.html" id="settings-icon">
             <img src="settings-icon.png" alt="Paramètres">
         </a>
+    </main>
+    <footer>
+        <p>&copy; 2024 Monopoly Personnalisé</p>
     </footer>
     <script src="game.js"></script>
 </body>
