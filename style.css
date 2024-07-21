@@ -183,3 +183,18 @@ footer {
         grid-row: 1 / span 5;
     }
 }
+
+/* Style pour l'icône de paramètres */
+#settings-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-top: 10px;
+}
+
+#settings-icon img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
