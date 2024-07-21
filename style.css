@@ -141,3 +141,92 @@ footer {
     height: auto;
     display: block;
 }
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#board {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+}
+
+.corner {
+    grid-column: span 2;
+    grid-row: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ddd;
+    border: 1px solid #aaa;
+    font-size: 0.8em;
+}
+
+.space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #aaa;
+}
+
+.border-top {
+    grid-column: span 1;
+    grid-row: 1;
+}
+
+.border-side {
+    grid-column: 1;
+    grid-row: span 1;
+}
+
+.border-bottom {
+    grid-column: span 1;
+    grid-row: 11;
+}
+
+#info-panel {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: #fff;
+    padding: 1em;
+    border: 1px solid #aaa;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+#settings-icon {
+    display: block;
+    margin: 1em auto;
+}
+
+#settings-icon img {
+    width: 32px;
+    height: 32px;
+}
