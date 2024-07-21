@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monopoly - Accueil</title>
+    <title>Monopoly - Connexion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,23 +11,17 @@
         <h1>Monopoly Personnalisé</h1>
     </header>
     <main>
-        <div id="welcome-container">
-            <h2>Bienvenue sur Monopoly Personnalisé</h2>
-            <form id="username-form">
-                <div class="form-group">
-                    <label for="username">Nom d'utilisateur :</label>
-                    <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required>
-                </div>
-                <button type="submit">Commencer le Jeu</button>
+        <div id="login-container">
+            <form id="login-form">
+                <label for="player-name">Entrez votre nom :</label>
+                <input type="text" id="player-name" name="player-name" placeholder="Nom d'utilisateur" required>
+                <button type="submit">Commencer la Partie</button>
             </form>
         </div>
     </main>
     <footer>
         <p>&copy; 2024 Monopoly Personnalisé</p>
-        <a href="settings.html" id="settings-icon">
-            <img src="settings-icon.png" alt="Paramètres">
-        </a>
     </footer>
-    <script src="index.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
