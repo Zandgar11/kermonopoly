@@ -1,9 +1,15 @@
-window.addEventListener('load', function() {
-    const playerName = localStorage.getItem('playerName');
-    if (playerName) {
-        document.getElementById('player-name').textContent = playerName;
-    } else {
-        // Rediriger vers la page d'accueil si le prénom n'est pas défini
-        window.location.href = 'index.html';
+// Fonction pour charger les paramètres du jeu
+function loadGameSettings() {
+    const savedUsername = localStorage.getItem('username');
+    const savedBoardColor = localStorage.getItem('boardColor');
+
+    if (savedUsername) {
+        document.getElementById('player-name').textContent = savedUsername;
     }
-});
+    if (savedBoardColor) {
+        document.getElementById('board').style.backgroundColor = savedBoardColor;
+    }
+}
+
+// Charger les paramètres lors du chargement de la page de jeu
+loadGameSettings();
