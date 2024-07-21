@@ -23,36 +23,36 @@ main {
     padding: 20px;
 }
 
-#login-container, #game-container {
+#welcome-container, #game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-#login-container {
+#welcome-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#login-form {
+#name-form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#login-form label {
+#name-form label {
     margin-bottom: 5px;
 }
 
-#login-form input {
+#name-form input {
     padding: 8px;
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-#login-form button {
+#name-form button {
     background-color: #007bff;
     color: #ffffff;
     border: none;
@@ -63,7 +63,7 @@ main {
     font-weight: bold;
 }
 
-#login-form button:hover {
+#name-form button:hover {
     background-color: #0056b3;
 }
 
