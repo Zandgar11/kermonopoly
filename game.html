@@ -3,87 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monopoly - Jeu</title>
+    <title>Monopoly Personnalisé</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- En-tête -->
     <header>
         <h1>Monopoly Personnalisé</h1>
     </header>
-    <main>
-        <div id="game-container">
-             <div id="board">
-                <!-- Coins -->
-                <div class="corner corner-top-left" id="start">Départ</div>
-                <div class="corner corner-top-right" id="free-parking">Libre Parc</div>
-                <div class="corner corner-bottom-right" id="go-to-jail">Aller en prison</div>
-                <div class="corner corner-bottom-left" id="go-to-jail">Aller en prison</div>
 
-                <!-- Cases supérieures -->
-                <div class="border-top space">Avenue des Champs-Élysées</div>
-                <div class="border-top space">Rue de la Paix</div>
-                <div class="border-top space">Compagnie de Gaz</div>
-                <div class="border-top space">Avenue Montaigne</div>
-                <div class="border-top space">Boulevard Saint-Michel</div>
-                <div class="border-top space">Compagnie d'Électricité</div>
-                <div class="border-top space">Avenue de Breteuil</div>
-                <div class="border-top space">Avenue Foch</div>
-                <div class="border-top space">Boulevard Saint-Germain</div>
-                <div class="border-top space">Place de la Bourse</div>
-                <div class="border-top space">Avenue des Gobelins</div>
-                
-                <!-- Cases droites -->
-                <div class="border-side space">Boulevard de la Villette</div>
-                <div class="border-side space">Rue de Paradis</div>
-                <div class="border-side space">Case de Chance</div>
-                <div class="border-side space">Boulevard Montmartre</div>
-                <div class="border-side space">Boulevard Poissonnière</div>
-                <div class="border-side space">Rue de la Banque</div>
-                <div class="border-side space">Avenue des Champs-Élysées</div>
-                <div class="border-side space">Case de Communauté</div>
-                <div class="border-side space">Rue de Courcelles</div>
-                <div class="border-side space">Rue de la Fayette</div>
-                <div class="border-side space">Avenue du Général Leclerc</div>
-                
-                <!-- Cases inférieures -->
-                <div class="border-bottom space">Boulevard Montmartre</div>
-                <div class="border-bottom space">Avenue du Général Leclerc</div>
-                <div class="border-bottom space">Case de Chance</div>
-                <div class="border-bottom space">Rue de la Banque</div>
-                <div class="border-bottom space">Boulevard Poissonnière</div>
-                <div class="border-bottom space">Rue de Paradis</div>
-                <div class="border-bottom space">Boulevard de la Villette</div>
-                <div class="border-bottom space">Case de Communauté</div>
-                <div class="border-bottom space">Place de la Bourse</div>
-                <div class="border-bottom space">Boulevard Saint-Germain</div>
-                <div class="border-bottom space">Avenue de Breteuil</div>
-                
-                <!-- Cases gauches -->
-                <div class="border-side space">Avenue de Breteuil</div>
-                <div class="border-side space">Avenue Foch</div>
-                <div class="border-side space">Rue de la Paix</div>
-                <div class="border-side space">Boulevard Saint-Michel</div>
-                <div class="border-side space">Case de Chance</div>
-                <div class="border-side space">Compagnie d'Électricité</div>
-                <div class="border-side space">Avenue Montaigne</div>
-                <div class="border-side space">Compagnie de Gaz</div>
-                <div class="border-side space">Avenue des Champs-Élysées</div>
-                <div class="border-side space">Case de Communauté</div>
-                <div class="border-side space">Rue de Courcelles</div>
-            <div id="player-info">
-                <h2>Informations du Joueur</h2>
-                <p id="current-player">Joueur actuel : <span id="current-player-name"></span></p>
-                <p id="balance">Solde : <span id="player-balance">1500</span> $</p>
-                <button id="end-turn">Finir le tour</button>
-            </div>
+    <!-- Page de connexion -->
+    <div id="login-container" style="display: block;">
+        <form id="login-form">
+            <h2>Bienvenue</h2>
+            <input type="text" id="username" placeholder="Entrez votre prénom" required>
+            <button type="button" onclick="startGame()">Commencer</button>
+        </form>
+    </div>
+
+    <!-- Page de jeu -->
+    <div id="game-container" style="display: none;">
+        <div id="board">
+            <!-- Coins du plateau -->
+            <div class="corner" style="grid-area: 1 / 1;">Départ</div>
+            <div class="corner" style="grid-area: 1 / 12;">Prison</div>
+            <div class="corner" style="grid-area: 12 / 1;">Parc Gratuit</div>
+            <div class="corner" style="grid-area: 12 / 12;">Allez en Prison</div>
+
+            <!-- Haut du plateau -->
+            <div class="space" style="grid-area: 1 / 2;">Boulevard de Belleville</div>
+            <div class="space" style="grid-area: 1 / 3;">Caisse de Communauté</div>
+            <div class="space" style="grid-area: 1 / 4;">Rue Lecourbe</div>
+            <div class="space" style="grid-area: 1 / 5;">Impôts sur le revenu</div>
+            <div class="space" style="grid-area: 1 / 6;">Gare Montparnasse</div>
+            <div class="space" style="grid-area: 1 / 7;">Rue de Vaugirard</div>
+            <div class="space" style="grid-area: 1 / 8;">Chance</div>
+            <div class="space" style="grid-area: 1 / 9;">Rue de Courcelles</div>
+            <div class="space" style="grid-area: 1 / 10;">Avenue de la République</div>
+            <div class="space" style="grid-area: 1 / 11;">Compagnie de Distribution d'Électricité</div>
+
+            <!-- Droite du plateau -->
+            <div class="space" style="grid-area: 2 / 12;">Boulevard de la Villette</div>
+            <div class="space" style="grid-area: 3 / 12;">Avenue de Neuilly</div>
+            <div class="space" style="grid-area: 4 / 12;">Rue de Paradis</div>
+            <div class="space" style="grid-area: 5 / 12;">Gare de Lyon</div>
+            <div class="space" style="grid-area: 6 / 12;">Avenue de l'Opéra</div>
+            <div class="space" style="grid-area: 7 / 12;">Boulevard Saint-Michel</div>
+            <div class="space" style="grid-area: 8 / 12;">Caisse de Communauté</div>
+            <div class="space" style="grid-area: 9 / 12;">Place Pigalle</div>
+            <div class="space" style="grid-area: 10 / 12;">Gare du Nord</div>
+            <div class="space" style="grid-area: 11 / 12;">Avenue Matignon</div>
+
+            <!-- Bas du plateau -->
+            <div class="space" style="grid-area: 12 / 11;">Boulevard Malesherbes</div>
+            <div class="space" style="grid-area: 12 / 10;">Avenue Henri-Martin</div>
+            <div class="space" style="grid-area: 12 / 9;">Gare Saint-Lazare</div>
+            <div class="space" style="grid-area: 12 / 8;">Faubourg Saint-Honoré</div>
+            <div class="space" style="grid-area: 12 / 7;">Place de la Bourse</div>
+            <div class="space" style="grid-area: 12 / 6;">Compagnie de Distribution des Eaux</div>
+            <div class="space" style="grid-area: 12 / 5;">Rue la Fayette</div>
+            <div class="space" style="grid-area: 12 / 4;">Chance</div>
+            <div class="space" style="grid-area: 12 / 3;">Avenue Foch</div>
+            <div class="space" style="grid-area: 12 / 2;">Boulevard des Capucines</div>
+
+            <!-- Gauche du plateau -->
+            <div class="space" style="grid-area: 11 / 1;">Avenue des Champs-Élysées</div>
+            <div class="space" style="grid-area: 10 / 1;">Rue de la Paix</div>
+            <div class="space" style="grid-area: 9 / 1;">Caisse de Communauté</div>
+            <div class="space" style="grid-area: 8 / 1;">Chance</div>
+            <div class="space" style="grid-area: 7 / 1;">Gare du Nord</div>
+            <div class="space" style="grid-area: 6 / 1;">Compagnie des Eaux</div>
+            <div class="space" style="grid-area: 5 / 1;">Boulevard de la Villette</div>
+            <div class="space" style="grid-area: 4 / 1;">Rue de Paradis</div>
+            <div class="space" style="grid-area: 3 / 1;">Avenue de Neuilly</div>
+            <div class="space" style="grid-area: 2 / 1;">Gare de Lyon</div>
         </div>
-        <a href="settings.html" id="settings-icon">
-            <img src="settings-icon.png" alt="Paramètres">
-        </a>
-    </main>
+        <div id="info-panel">
+            <h2>Informations</h2>
+            <p id="player-name">Nom du joueur : <span id="username-display">Inconnu</span></p>
+            <button id="settings-button">Paramètres</button>
+        </div>
+    </div>
+
+    <!-- Page de paramètres -->
+    <div id="settings-container" style="display: none;">
+        <h2>Paramètres</h2>
+        <div>
+            <div class="color-option" id="color1" style="background-color: #FF5733;"></div>
+            <div class="color-option" id="color2" style="background-color: #33FF57;"></div>
+            <div class="color-option" id="color3" style="background-color: #3357FF;"></div>
+        </div>
+        <button onclick="saveSettings()">Sauvegarder</button>
+    </div>
+
     <footer>
         <p>&copy; 2024 Monopoly Personnalisé</p>
     </footer>
-    <script src="game.js"></script>
+
+    <script>
+        // Fonction pour démarrer le jeu
+        function startGame() {
+            const username = document.getElementById('username').value;
+            if (username) {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('game-container').style.display = 'flex';
+                document.getElementById('username-display').innerText = username;
+            }
+        }
+
+        // Fonction pour ouvrir les paramètres
+        document.getElementById('settings-button').addEventListener('click', function () {
+            document.getElementById('game-container').style.display = 'none';
+            document.getElementById('settings-container').style.display = 'flex';
+        });
+
+        // Fonction pour sauvegarder les paramètres
+        function saveSettings() {
+            // Exemple de sauvegarde de la couleur sélectionnée
+            const selectedColor = document.querySelector('.color-option.selected').style.backgroundColor;
+            document.getElementById('board').style.borderColor = selectedColor;
+
+            // Retour au jeu
+            document.getElementById('settings-container').style.display = 'none';
+            document.getElementById('game-container').style.display = 'flex';
+        }
+
+        // Sélection de la couleur
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function () {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
 </body>
 </html>
