@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monopoly - Connexion</title>
+    <title>Monopoly Personnalisé - Connexion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Monopoly Personnalisé</h1>
-    </header>
-    <main>
-        <div id="login-container">
-            <form id="login-form">
-                <label for="player-name">Entrez votre nom :</label>
-                <input type="text" id="player-name" name="player-name" placeholder="Nom d'utilisateur" required>
-                <button type="submit">Commencer la Partie</button>
-            </form>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Monopoly Personnalisé</p>
-    </footer>
-    <script src="login.js"></script>
+    <div id="login-container">
+        <form id="login-form">
+            <h2>Bienvenue</h2>
+            <input type="text" id="username" placeholder="Entrez votre prénom" required>
+            <button type="button" onclick="startGame()">Commencer</button>
+        </form>
+    </div>
+    <script>
+        function startGame() {
+            const username = document.getElementById('username').value;
+            if (username) {
+                localStorage.setItem('username', username);
+                window.location.href = 'game.html';
+            }
+        }
+    </script>
 </body>
 </html>
