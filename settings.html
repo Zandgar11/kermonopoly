@@ -3,44 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paramètres - Monopoly</title>
-    <link rel="stylesheet" href="settings.css">
+    <title>Monopoly Personnalisé - Paramètres</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Paramètres du Jeu</h1>
-    </header>
-    <main>
-        <div id="settings-container">
-            <form id="settings-form">
-                <div class="form-group">
-                    <label for="username">Nom d'utilisateur :</label>
-                    <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur">
-                </div>
-                <div class="form-group">
-                    <label for="board-color">Couleur du plateau :</label>
-                    <input type="color" id="board-color" name="board-color">
-                </div>
-                <div class="form-group">
-                    <label for="top-borders-color">Couleur des bandeaux supérieurs :</label>
-                    <input type="color" id="top-borders-color" name="top-borders-color">
-                </div>
-                <div class="form-group">
-                    <label for="side-borders-color">Couleur des bandeaux latéraux :</label>
-                    <input type="color" id="side-borders-color" name="side-borders-color">
-                </div>
-                <div class="form-group">
-                    <label for="bottom-borders-color">Couleur des bandeaux inférieurs :</label>
-                    <input type="color" id="bottom-borders-color" name="bottom-borders-color">
-                </div>
-                <button type="submit">Sauvegarder les Paramètres</button>
-            </form>
-            <a href="game.html" id="back-to-game">Retourner au Jeu</a>
+    <div id="settings-container">
+        <h2>Paramètres</h2>
+        <div>
+            <div class="color-option" id="color1" style="background-color: #FF5733;"></div>
+            <div class="color-option" id="color2" style="background-color: #33FF57;"></div>
+            <div class="color-option" id="color3" style="background-color: #3357FF;"></div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Monopoly Personnalisé</p>
-    </footer>
-    <script src="settings.js"></script>
+        <button onclick="saveSettings()">Sauvegarder</button>
+    </div>
+    <script>
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function () {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        function saveSettings() {
+            const selectedColor = document.querySelector('.color-option.selected').style.backgroundColor;
+            localStorage.setItem('boardColor', selectedColor);
+            window.location.href = 'game.html';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const savedColor = localStorage.getItem('boardColor');
+            if (savedColor) {
+                document.querySelectorAll('.color-option').forEach(option => {
+                    if (option.style.backgroundColor === savedColor) {
+                        option.classList.add('selected');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
